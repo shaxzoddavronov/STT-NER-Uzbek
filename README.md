@@ -20,12 +20,12 @@ Whisper model developed by OpenAI used to fine-tune on STT task. Large version 2
 * https://huggingface.co/datasets/mozilla-foundation/common_voice_13_0/viewer/uz
 
 ### Entites:
-B-GPE (Countries)
-B-LOC (Location)
-B-PERSON (Person)
-B-ORG (Organization)
-B-DATE (Date)
-B-EVENT (Events)
+* B-GPE (Countries)
+* B-LOC (Location)
+* B-PERSON (Person)
+* B-ORG (Organization)
+* B-DATE (Date)
+* B-EVENT (Events)
 
 ### Fine-Tuned Model Hyperparameters:
 * batch size = 8
