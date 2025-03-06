@@ -137,24 +137,25 @@ print(text)
 
 ### Testing NER model:
 ```python
-from transformers import AutoModelForTokenClassification, AutoTokenizer
-from transformers import pipeline
+from transformers import AutoModelForTokenClassification, AutoTokenizer, pipeline
 from peft import PeftModel, PeftConfig
 
-label_names=['O','B-PERSON','B-GPE','B-ORG','B-LOC','B-DATE','B-EVENT']
-num_labels=len(label_names)
+label_names = ['O', 'B-PERSON', 'B-GPE', 'B-ORG', 'B-LOC', 'B-DATE', 'B-EVENT']
+num_labels = len(label_names)
 id_to_label = {i: label for i, label in enumerate(label_names)}
-label_to_id = {label:i for i, label in enumerate(label_names)}
+label_to_id = {label: i for i, label in enumerate(label_names)}
 
 ner_model_id = "ShakhzoDavronov/xlm-roberta-lora-ner-uz"
 ner_config = PeftConfig.from_pretrained(ner_model_id)
-ner_model = AutoModelForTokenClassification.from_pretrained(ner_config.base_model_name_or_path, num_labels=len(label_names),
-                                                        id2label=id_to_label, label2id=label_to_id)
 
+ner_model = AutoModelForTokenClassification.from_pretrained(ner_config.base_model_name_or_path,
+                              num_labels=num_labels,id2label=id_to_label,label2id=label_to_id)
+
+ner_model = PeftModel.from_pretrained(ner_model, ner_model_id)
+ner_model = ner_model.merge_and_unload()
 ner_tokenizer = AutoTokenizer.from_pretrained(ner_config.base_model_name_or_path)
-ner_model = PeftModel.from_pretrained(ner_model,ner_model_id)
 
-ner_pipe=pipeline('ner',model=ner_model,tokenizer=ner_tokenizer)
+ner_pipe = pipeline('ner', model=ner_model, tokenizer=ner_tokenizer)
 
 text="Toshkentda Shavkat Mirziyoyev Rossiya prezidentini kutib oldi"
 ner=ner_pipe(text)
