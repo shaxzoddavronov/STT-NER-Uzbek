@@ -1,5 +1,3 @@
-![NER_trainable_params](https://github.com/user-attachments/assets/8bb8014f-0060-4796-99a2-9add57338fad)# Speech-to-Text (STT) and Named Entity Recognition (NER) Integrated Pipeline for Uzbek
-
 ## Model and Dataset Links:
 * STT: https://huggingface.co/ShakhzoDavronov/whisper-large-lora-uz
 * NER: https://huggingface.co/ShakhzoDavronov/xlm-roberta-lora-ner-uz
