@@ -46,7 +46,7 @@ Whisper model developed by OpenAI used to fine-tune on STT task. Large version 2
 ![image alt](https://github.com/shaxzoddavronov/STT-NER-Uzbek/blob/main/images/STT%20Result.png?raw=true)
 
 ### Testing
-Tested with sample sentence:
+Tested with sample audio:
 
 ![image alt](https://github.com/shaxzoddavronov/STT-NER-Uzbek/blob/main/images/STT%20Testing.png?raw=true)
 
