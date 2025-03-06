@@ -4,44 +4,6 @@
 * STT Dataset: https://huggingface.co/datasets/mozilla-foundation/common_voice_13_0/viewer/uz
 * NER Dataset: https://huggingface.co/datasets/risqaliyevds/uzbek_ner
 
-## Overview
-This project focuses on developing a Speech-to-Text (STT) system specifically for the Uzbek language and enhancing it with Named Entity Recognition (NER) capabilities. The system converts spoken Uzbek into text and then processes the transcribed output to identify and extract meaningful entities such as names, locations, organizations, and other relevant information.
-
-## NER Details
-The large version of XLM-RoBERTa model include over 570 million paramters which cause time inefficency and computing more resources (GPU/CPU). So We utilized one of the PEFT (Parameter Efficent Fine-Tuning) technique  called LoRA (Low Rank Adaption) used to fine-tune large neural networks efficiently by training only a small subset of parameters while keeping the majority of the model frozen. We trained only ~ 2 % paramters (12 millon) of original model.
-
-![image alt](https://github.com/shaxzoddavronov/STT-NER-Uzbek/blob/main/images/NER_trainable_params.png?raw=true)
-
-### Base Model:
-* https://huggingface.co/FacebookAI/xlm-roberta-large
-  
-### Dataset:
-* https://huggingface.co/datasets/risqaliyevds/uzbek_ner
-  
-### Fine-Tuned Model Hyperparameters:
-* batch size = 8
-* learning rate = 2e-4
-* weight_decay = 0.01
-* trained epochs = 3
-* fp16 = True
-* evaluation and save strategy = 'epoch'
-  
-### LoRA Configuration:
-* rank = 128
-* alpha = 32
-* dropout = 0.01
-
-### Model Result:
-![image alt](https://github.com/shaxzoddavronov/STT-NER-Uzbek/blob/main/images/NER%20Result.png?raw=true)
-
-### Testing
-Tested with sample sentence:
-
-![image alt](https://github.com/shaxzoddavronov/STT-NER-Uzbek/blob/main/images/NER%20Testing.png?raw=true)
-
-### Training Porcess Code:
-xxxxxxxxx
-
 
 ## STT Details
 Whisper model developed by OpenAI used to fine-tune on STT task. Large version 2 of the model chosen to train with LoRa adapter like XLM-RoBERTa. Since, it has over 1.5B paramaters and it is almost impossible to train on  open source cloud-based Jupyter notebook environments (kaggle, google colab). We trained only ~ 1 % paramters (15 millon) of original model.
@@ -87,6 +49,46 @@ Tested with sample sentence:
 
 ### Training Process Code:
 xxxxxxxxxxx
+
+## Overview
+This project focuses on developing a Speech-to-Text (STT) system specifically for the Uzbek language and enhancing it with Named Entity Recognition (NER) capabilities. The system converts spoken Uzbek into text and then processes the transcribed output to identify and extract meaningful entities such as names, locations, organizations, and other relevant information.
+
+## NER Details
+The large version of XLM-RoBERTa model include over 570 million paramters which cause time inefficency and computing more resources (GPU/CPU). So We utilized one of the PEFT (Parameter Efficent Fine-Tuning) technique  called LoRA (Low Rank Adaption) used to fine-tune large neural networks efficiently by training only a small subset of parameters while keeping the majority of the model frozen. We trained only ~ 2 % paramters (12 millon) of original model.
+
+![image alt](https://github.com/shaxzoddavronov/STT-NER-Uzbek/blob/main/images/NER_trainable_params.png?raw=true)
+
+### Base Model:
+* https://huggingface.co/FacebookAI/xlm-roberta-large
+  
+### Dataset:
+* https://huggingface.co/datasets/risqaliyevds/uzbek_ner
+  
+### Fine-Tuned Model Hyperparameters:
+* batch size = 8
+* learning rate = 2e-4
+* weight_decay = 0.01
+* trained epochs = 3
+* fp16 = True
+* evaluation and save strategy = 'epoch'
+  
+### LoRA Configuration:
+* rank = 128
+* alpha = 32
+* dropout = 0.01
+
+### Model Result:
+![image alt](https://github.com/shaxzoddavronov/STT-NER-Uzbek/blob/main/images/NER%20Result.png?raw=true)
+
+### Testing
+Tested with sample sentence:
+
+![image alt](https://github.com/shaxzoddavronov/STT-NER-Uzbek/blob/main/images/NER%20Testing.png?raw=true)
+
+### Training Porcess Code:
+xxxxxxxxx
+
+
 
 ## Usage Guidance
 #### Requirements
