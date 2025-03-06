@@ -12,4 +12,4 @@ This project focuses on developing a Speech-to-Text (STT) system specifically fo
 ## NER Details
 The large version of XLM-RoBERTa model include over 570 million paramters which cause time inefficency and computing more resources (GPU/CPU). So We utilized one of the PEFT (Parameter Efficent Fine-Tuning) technique  called LoRa (Low Rank Adaption) used to fine-tune large neural networks efficiently by training only a small subset of parameters while keeping the majority of the model frozen. We trained only ~ 2 % paramters (12 millon) of original model.
 
-![Alt text]([images/my-image.png](https://github.com/shaxzoddavronov/STT-NER-Uzbek/blob/main/images/NER_trainable_params.png))
+![image alt]([images/my-image.png]([https://github.com/shaxzoddavronov/STT-NER-Uzbek/blob/main/images/NER_trainable_params.png](https://github.com/shaxzoddavronov/STT-NER-Uzbek/blob/main/images/NER_trainable_params.png?raw=true)))
