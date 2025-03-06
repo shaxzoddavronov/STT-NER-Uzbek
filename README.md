@@ -51,7 +51,7 @@ Tested with sample audio:
 ![image alt](https://github.com/shaxzoddavronov/STT-NER-Uzbek/blob/main/images/STT%20Testing.png?raw=true)
 
 ### Training Process Code:
-xxxxxxxxxxx
+https://github.com/shaxzoddavronov/STT-NER-Uzbek/blob/main/STT/Fine-Tuning%20model%20for%20STT.ipynb
 
 ## NER Details
 The large version of XLM-RoBERTa model include over 570 million paramters which cause time inefficency and computing more resources (GPU/CPU). So We utilized one of the PEFT (Parameter Efficent Fine-Tuning) technique  called LoRA (Low Rank Adaption) used to fine-tune large neural networks efficiently by training only a small subset of parameters while keeping the majority of the model frozen. We trained only ~ 2 % paramters (12 millon) of original model.
@@ -85,8 +85,8 @@ Tested with sample sentence:
 
 ![image alt](https://github.com/shaxzoddavronov/STT-NER-Uzbek/blob/main/images/NER%20Testing.png?raw=true)
 
-### Training Porcess Code:
-xxxxxxxxx
+### Training Process Code:
+https://github.com/shaxzoddavronov/STT-NER-Uzbek/blob/main/NER/Fine-Tuning%20model%20for%20NER.ipynb
 
 
 
