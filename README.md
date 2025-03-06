@@ -36,7 +36,7 @@ Whisper model developed by OpenAI used to fine-tune on STT task. Large version 2
 * evaluation and save strategy = 'steps'
 * logging stpes = 300
   
-### LoRA Configuratio:
+### LoRA Configuration:
 * rank = 32
 * alpha = 64
 * dropout = 0.05
